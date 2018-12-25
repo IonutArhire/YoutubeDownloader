@@ -27,9 +27,7 @@ def convert_to_audio(vid_filename, song_title, collection_dir, quality):
         chosen_bitrate = '320k'
 
     clip.audio.write_audiofile(audioclip_full_filename, bitrate=chosen_bitrate)
-
-    del clip.reader
-    del clip
+    clip.close()
 
 
 def main(args):
